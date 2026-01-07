@@ -18,19 +18,19 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val imageQuadros = findViewById<ImageView>(R.id.quadros)
         val textTema= findViewById<TextView>(R.id.tema)
+        val imageLogo= findViewById<ImageView>(R.id.logo)
 
         val topAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
         val bottomAnimation:Animation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
         bottomAnimation.startOffset = 800
-        imageQuadros.startAnimation(topAnimation)
         textTema.startAnimation(bottomAnimation)
+        imageLogo.startAnimation(bottomAnimation)
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val intent = Intent(this, Cadastro_Activity::class.java)
+            val intent = Intent(this, Introduction_Activity::class.java)
 
             val options = ActivityOptions.makeCustomAnimation(
                 this,
