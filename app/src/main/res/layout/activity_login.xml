@@ -162,7 +162,7 @@
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/poppins_bold"
-            android:text="Fazer cadastro"
+            android:text=" Fazer cadastro"
             android:textColor="#0097A7"
             android:textSize="15sp"
             android:textStyle="bold" />

@@ -1,5 +1,6 @@
 package com.example.museudeartesdeharvard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -40,5 +41,10 @@ class LoginActivity: AppCompatActivity() {
         textGoToRegister.startAnimation(animation)
         buttonLogin.startAnimation(animation)
 
-    }
+        textGoToRegister.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
         }
+
+    }
+}
