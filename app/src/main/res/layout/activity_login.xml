@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/imgBackground_intro"
@@ -56,7 +57,7 @@
         android:fontFamily="@font/poppins"
         android:hint="teste@teste.com"
         android:inputType="textEmailAddress"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:paddingVertical="12dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -83,6 +84,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_editText_Senha"
         android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -101,7 +103,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
             android:inputType="textPassword"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:background="@null"
             android:paddingVertical="12dp"
             android:paddingStart="16dp"

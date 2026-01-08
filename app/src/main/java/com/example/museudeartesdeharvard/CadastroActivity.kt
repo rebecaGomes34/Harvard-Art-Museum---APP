@@ -1,5 +1,6 @@
 package com.example.museudeartesdeharvard
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
@@ -9,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class CadastroActivity: AppCompatActivity() {
 
@@ -23,25 +25,22 @@ class CadastroActivity: AppCompatActivity() {
         val textConfirmaSenha = findViewById<TextView>(R.id.cadastro_text_confirmaSenha)
         val textTelaLogin = findViewById<TextView>(R.id.cadastro_text_telaLogin)
 
-        // Inputs
         val inputUsername =
             findViewById<AppCompatEditText>(R.id.cadastro_editText_UserName)
         val inputEmail =
             findViewById<AppCompatEditText>(R.id.cadastro_editText_email)
         val inputSenha =
-            findViewById<TextInputEditText>(R.id.cadastro_editText_Senha)
+            findViewById<TextInputLayout>(R.id.cadastro_layout_editText_Senha)
         val inputConfirmaSenha =
-            findViewById<TextInputEditText>(R.id.cadastro_editText_ConfirmaSenha)
+            findViewById<TextInputLayout>(R.id.cadastro_layout_editText_ConfirmaSenha)
 
-        // Botão
+
         val buttonCadastrar =
             findViewById<Button>(R.id.cadastro_buttom_cadastrar)
 
-        // 🔥 MESMA ANIMAÇÃO DA LOGIN
         val animation: Animation =
             AnimationUtils.loadAnimation(this, R.anim.logo_animation)
 
-        // Aplicando animação em tudo
         titleCadastro.startAnimation(animation)
         textUsername.startAnimation(animation)
         inputUsername.startAnimation(animation)
@@ -56,10 +55,15 @@ class CadastroActivity: AppCompatActivity() {
 
         textTelaLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.fade_in_animation,
+                R.anim.fade_out_animation
+            )
+
+            startActivity(intent, options.toBundle())
         }
-
-
     }
 }
 

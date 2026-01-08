@@ -1,5 +1,6 @@
 package com.example.museudeartesdeharvard
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
@@ -20,18 +21,14 @@ class LoginActivity: AppCompatActivity() {
         val textForgotPassword = findViewById<TextView>(R.id.textForgotPassword)
         val textGoToRegister = findViewById<TextView>(R.id.textGoToRegister)
 
-        // Inputs
         val inputEmail = findViewById<androidx.appcompat.widget.AppCompatEditText>(R.id.editText_Email)
-        val inputSenha = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.editTextSenha)
+        val inputSenha = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.layout_editText_Senha)
 
-        // Button
         val buttonLogin = findViewById<Button>(R.id.buttom_fazerLogin)
 
-        // Animação (mesma da introduction)
         val animation: Animation =
             AnimationUtils.loadAnimation(this, R.anim.logo_animation)
 
-        // Aplicando animação em todos
         titleLogin.startAnimation(animation)
         textEmail.startAnimation(animation)
         inputEmail.startAnimation(animation)
@@ -43,8 +40,18 @@ class LoginActivity: AppCompatActivity() {
 
         textGoToRegister.setOnClickListener {
             val intent = Intent(this, CadastroActivity::class.java)
-            startActivity(intent)
+
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.fade_in_animation,
+                R.anim.fade_out_animation
+            )
+
+            startActivity(intent, options.toBundle())
+
         }
+
+
 
     }
 }
