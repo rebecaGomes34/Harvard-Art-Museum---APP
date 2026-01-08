@@ -9,8 +9,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.museudeartesdeharvard.R
+import com.example.museudeartesdeharvard.service.ValidationService
+import com.google.android.material.textfield.TextInputLayout
 
-class LoginActivity: AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +24,8 @@ class LoginActivity: AppCompatActivity() {
         val textForgotPassword = findViewById<TextView>(R.id.textForgotPassword)
         val textGoToRegister = findViewById<TextView>(R.id.textGoToRegister)
 
-        val inputEmail = findViewById<androidx.appcompat.widget.AppCompatEditText>(R.id.editText_Email)
-        val inputSenha = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.layout_editText_Senha)
+        val layoutEmail = findViewById<TextInputLayout>(R.id.layout_editText_Email)
+        val layoutSenha = findViewById<TextInputLayout>(R.id.layout_editText_Senha)
 
         val buttonLogin = findViewById<Button>(R.id.buttom_fazerLogin)
 
@@ -32,34 +34,46 @@ class LoginActivity: AppCompatActivity() {
 
         titleLogin.startAnimation(animation)
         textEmail.startAnimation(animation)
-        inputEmail.startAnimation(animation)
+        layoutEmail.startAnimation(animation)
         textSenha.startAnimation(animation)
-        inputSenha.startAnimation(animation)
+        layoutSenha.startAnimation(animation)
         textForgotPassword.startAnimation(animation)
         textGoToRegister.startAnimation(animation)
         buttonLogin.startAnimation(animation)
 
         textGoToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
-
             val options = ActivityOptions.makeCustomAnimation(
                 this,
                 R.anim.fade_in_animation,
                 R.anim.fade_out_animation
             )
-
             startActivity(intent, options.toBundle())
         }
 
-        textForgotPassword.setOnClickListener{
+        textForgotPassword.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
-
             val options = ActivityOptions.makeCustomAnimation(
                 this,
                 R.anim.fade_in_animation,
                 R.anim.fade_out_animation
             )
             startActivity(intent, options.toBundle())
+        }
+
+        buttonLogin.setOnClickListener {
+
+            val email = layoutEmail.editText?.text.toString().trim()
+            val password = layoutSenha.editText?.text.toString()
+
+            val emailError = ValidationService.validateEmail(email)
+            val passwordError = ValidationService.validatePassword(password)
+
+            layoutEmail.error = emailError
+            layoutSenha.error = passwordError
+
+            if (emailError == null && passwordError == null) {
+            }
         }
     }
 }

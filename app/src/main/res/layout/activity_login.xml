@@ -46,24 +46,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLogin"/>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_Email"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_editText_Email"
         android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/text_box_drawable"
-        android:fontFamily="@font/poppins"
-        android:hint="teste@teste.com"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        android:paddingVertical="12dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        app:boxBackgroundMode="none"
+        app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:background="@null"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <TextView
@@ -80,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.042"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Email"/>
+        app:layout_constraintTop_toBottomOf="@+id/layout_editText_Email"/>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -93,6 +102,7 @@
         android:background="@drawable/text_box_drawable"
         app:endIconMode="password_toggle"
         app:boxBackgroundMode="none"
+        app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSenha">
