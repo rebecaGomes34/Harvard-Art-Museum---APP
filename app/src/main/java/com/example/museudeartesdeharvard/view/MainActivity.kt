@@ -1,4 +1,4 @@
-package com.example.museudeartesdeharvard
+package com.example.museudeartesdeharvard.view
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.museudeartesdeharvard.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val intent = Intent(this, Introduction_Activity::class.java)
+            val intent = Intent(this, IntroductionActivity::class.java)
 
             val options = ActivityOptions.makeCustomAnimation(
                 this,

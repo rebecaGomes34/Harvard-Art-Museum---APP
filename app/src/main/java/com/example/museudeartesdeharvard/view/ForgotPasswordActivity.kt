@@ -1,4 +1,4 @@
-package com.example.museudeartesdeharvard
+package com.example.museudeartesdeharvard.view
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -10,12 +10,13 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.museudeartesdeharvard.R
 
-class RedefinirSenha_Activity: AppCompatActivity() {
+class ForgotPasswordActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_recuperar_senha)
+        setContentView(R.layout.activity_forgot_password)
 
         val textTema = findViewById<TextView>(R.id.redefinirSenha_text_redefinirSenha)
         val textDescricao = findViewById<TextView>(R.id.redefinirSenha_text_descricao)
@@ -28,7 +29,7 @@ class RedefinirSenha_Activity: AppCompatActivity() {
         val buttomEnviar = findViewById<Button>(R.id.redefinirSenha_buttom_enviar)
 
         val animation: Animation =
-            AnimationUtils.loadAnimation(this,R.anim.logo_animation)
+            AnimationUtils.loadAnimation(this, R.anim.logo_animation)
 
         textTema.startAnimation(animation)
         textDescricao.startAnimation(animation)

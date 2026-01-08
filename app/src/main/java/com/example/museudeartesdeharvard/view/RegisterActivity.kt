@@ -1,4 +1,4 @@
-package com.example.museudeartesdeharvard
+package com.example.museudeartesdeharvard.view
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -9,14 +9,14 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
-import com.google.android.material.textfield.TextInputEditText
+import com.example.museudeartesdeharvard.R
 import com.google.android.material.textfield.TextInputLayout
 
-class CadastroActivity: AppCompatActivity() {
+class RegisterActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
+        setContentView(R.layout.activity_register)
 
         val titleCadastro = findViewById<TextView>(R.id.textCadastro)
         val textUsername = findViewById<TextView>(R.id.cadastro_text_Username)

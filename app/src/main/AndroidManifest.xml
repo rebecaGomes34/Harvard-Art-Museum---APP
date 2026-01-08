@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MuseuDeArtesDeHarvard"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,19 +23,19 @@
         </activity>
 
         <activity
-            android:name=".Introduction_Activity"
+            android:name=".view.IntroductionActivity"
             android:exported="false"/>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="false"/>
 
         <activity
-            android:name=".CadastroActivity"
+            android:name=".view.RegisterActivity"
             android:exported="false"/>
 
         <activity
-            android:name=".RedefinirSenha_Activity"
+            android:name=".view.ForgotPasswordActivity"
             android:exported="false"/>
 
         <meta-data

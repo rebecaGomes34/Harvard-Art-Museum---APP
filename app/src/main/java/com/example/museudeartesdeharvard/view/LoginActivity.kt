@@ -1,4 +1,4 @@
-package com.example.museudeartesdeharvard
+package com.example.museudeartesdeharvard.view
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.museudeartesdeharvard.R
 
 class LoginActivity: AppCompatActivity() {
 
@@ -39,7 +40,7 @@ class LoginActivity: AppCompatActivity() {
         buttonLogin.startAnimation(animation)
 
         textGoToRegister.setOnClickListener {
-            val intent = Intent(this, CadastroActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
 
             val options = ActivityOptions.makeCustomAnimation(
                 this,
@@ -51,7 +52,7 @@ class LoginActivity: AppCompatActivity() {
         }
 
         textForgotPassword.setOnClickListener{
-            val intent = Intent(this, RedefinirSenha_Activity::class.java)
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
 
             val options = ActivityOptions.makeCustomAnimation(
                 this,
