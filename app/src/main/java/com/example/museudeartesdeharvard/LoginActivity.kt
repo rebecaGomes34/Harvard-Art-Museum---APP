@@ -48,10 +48,17 @@ class LoginActivity: AppCompatActivity() {
             )
 
             startActivity(intent, options.toBundle())
-
         }
 
+        textForgotPassword.setOnClickListener{
+            val intent = Intent(this, RedefinirSenha_Activity::class.java)
 
-
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.fade_in_animation,
+                R.anim.fade_out_animation
+            )
+            startActivity(intent, options.toBundle())
+        }
     }
 }
